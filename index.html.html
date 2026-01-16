@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Руслан — частный электрик | Москва</title>
+  <meta name="description" content="Частный электрик в Москве. Розетки, выключатели, освещение, щиты, диагностика, устранение аварий. Аккуратно и чисто." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#121b2f;
+      --text:#e9eefc;
+      --muted:#aab6da;
+      --accent:#3da9ff;
+      --accent2:#22c55e;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 14px 34px rgba(0,0,0,.35);
+      --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:radial-gradient(1000px 500px at 20% 0%, #14244b 0%, var(--bg) 55%);
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+      padding:12px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),#8b5cf6);
+      display:grid;place-items:center;
+      font-weight:900;
+      box-shadow:var(--shadow);
+    }
+    .brand b{display:block;font-size:14px;letter-spacing:.2px}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    .nav{display:flex;gap:10px;flex-wrap:wrap}
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      padding:22px;
+      margin-top:10px;
+    }
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+
+    h1{margin:0 0 10px;font-size:34px;line-height:1.15}
+    .sub{margin:0 0 16px;color:var(--muted);line-height:1.55}
+
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}
+    .badge{
+      font-size:12px;color:var(--muted);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:8px 10px;border-radius:999px;
+    }
+
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 14px;border-radius:14px;
+      font-weight:700;font-size:14px;text-decoration:none;border:0;
+    }
+    .btn.primary{background:var(--accent);color:#061022}
+    .btn.green{background:var(--accent2);color:#06140b}
+    .btn.ghost{background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text)}
+
+    .mini{
+      padding:14px;border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.12);
+      margin-bottom:12px;
+    }
+    .mini:last-child{margin-bottom:0}
+    .mini b{display:block;margin-bottom:6px}
+    .mini p{margin:0;color:var(--muted);line-height:1.5;font-size:13px}
+
+    .section{margin-top:26px}
+    .section h2{margin:0 0 10px;font-size:22px}
+    .lead{margin:0 0 14px;color:var(--muted);line-height:1.55}
+
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media (max-width:900px){ .grid2{grid-template-columns:1fr} }
+
+    .item{
+      padding:16px;border-radius:16px;border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+    .item b{display:block;margin-bottom:6px}
+    .item span{color:var(--muted);font-size:13px;line-height:1.5}
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+    th,td{padding:12px 12px;text-align:left;font-size:14px}
+    th{background:rgba(255,255,255,.06)}
+    td{border-top:1px solid var(--line);color:var(--muted)}
+
+    .photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    @media (max-width:900px){ .photos{grid-template-columns:repeat(2,1fr)} }
+    .ph{
+      aspect-ratio:4/3;border-radius:16px;border:1px dashed rgba(255,255,255,.18);
+      background:rgba(255,255,255,.03);
+      display:grid;place-items:center;color:rgba(255,255,255,.35);
+      font-size:13px;
+    }
+
+    .footer{
+      margin:26px 0 70px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    }
+
+    .sticky{
+      position:fixed;left:0;right:0;bottom:0;
+      background:rgba(11,18,32,.88);
+      backdrop-filter:blur(10px);
+      border-top:1px solid var(--line);
+    }
+    .sticky .wrap{padding:12px 24px}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .bar small{color:var(--muted)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="#top">
+        <div class="logo">⚡</div>
+        <div>
+          <b>Руслан — частный электрик</b>
+          <span>Москва • выезд по районам • аккуратно и чисто</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#works">Работы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero card">
+        <div>
+          <h1>Электрика под ключ в квартире и офисе</h1>
+          <p class="sub">
+            Розетки, выключатели, свет, щиты, диагностика и устранение аварий.
+            Стараюсь делать максимально чисто, без лишней пыли и бардака.
+          </p>
+
+          <div class="badges">
+            <div class="badge">15+ лет опыта</div>
+            <div class="badge">Смета до начала</div>
+            <div class="badge">Фото/видео отчёт</div>
+            <div class="badge">Инструмент с собой</div>
+          </div>
+
+          <!-- ЗАМЕНИ КОНТАКТЫ НИЖЕ -->
+          <div class="cta">
+            <a class="btn primary" href="tel:+79250000000">Позвонить</a>
+            <a class="btn green" href="https://wa.me/79250000000" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn ghost" href="https://t.me/El_Barto220W" target="_blank" rel="noopener">Telegram</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="mini">
+            <b>Что делаю чаще всего</b>
+            <p>Добавить розетки, заменить автоматы, собрать щит, подключить технику и освещение.</p>
+          </div>
+          <div class="mini">
+            <b>Как считаю цену</b>
+            <p>Смотрю объём, состояние проводки и доступ. До начала всё проговариваем, без сюрпризов.</p>
+          </div>
+          <div class="mini">
+            <b>Расходники</b>
+            <p>Клеммы, гильзы, термоусадка обычно мои. Розетки и автоматы — по договорённости.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <h2>Услуги</h2>
+        <p class="lead">Если задачи нет в списке — напиши, скажу честно, возьмусь или нет.</p>
+
+        <div class="grid2">
+          <div class="item"><b>Розетки и выключатели</b><span>Установка, перенос, замена, добавление точек, подрозетники.</span></div>
+          <div class="item"><b>Щиты и автоматы</b><span>Сборка/пересборка, УЗО/дифавтоматы, маркировка линий.</span></div>
+          <div class="item"><b>Освещение</b><span>Люстры, бра, треки, точечные, подсветка, датчики.</span></div>
+          <div class="item"><b>Диагностика и аварии</b><span>Выбивает автомат, пропал свет, короткое, нагрев, запах.</span></div>
+          <div class="item"><b>Штробление и прокладка кабеля</b><span>Штроба, сверление, прокладка кабеля, кабель-канал.</span></div>
+          <div class="item"><b>Слаботочка</b><span>Домофоны, камеры, сеть, витая пара, питание оборудования.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="prices">
+        <h2>Цены</h2>
+        <p class="lead">Ориентиры. Точную цену скажу после краткого понимания объёма.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Работа</th>
+              <th>От</th>
+              <th>Комментарий</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Установка розетки/выключателя</td><td>от 700 ₽</td><td>если всё подготовлено</td></tr>
+            <tr><td>Подрозетник + штроба (1 точка)</td><td>от 1500 ₽</td><td>зависит от стены</td></tr>
+            <tr><td>Повесить люстру/светильник</td><td>от 1200 ₽</td><td>по месту</td></tr>
+            <tr><td>Диагностика (выезд)</td><td>от 1500 ₽</td><td>если ремонт делаем — часто входит</td></tr>
+            <tr><td>Сборка/пересборка щита</td><td>от 9000 ₽</td><td>схема, порядок, подписи</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="works">
+        <h2>Примеры работ</h2>
+        <p class="lead">Поставил заглушки. Потом заменишь их на свои фото.</p>
+        <div class="photos">
+          <div class="ph">Фото 1</div>
+          <div class="ph">Фото 2</div>
+          <div class="ph">Фото 3</div>
+          <div class="ph">Фото 4</div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews">
+        <h2>Отзывы</h2>
+        <p class="lead">Можно вставить реальные отзывы с Авито или переписок.</p>
+
+        <div class="grid2">
+          <div class="item"><b>Марина</b><span>Приехал вовремя, сделал аккуратно, после себя убрал. Пыли минимум.</span></div>
+          <div class="item"><b>Алексей</b><span>Собрал щит, подписал линии. Теперь всё понятно и работает стабильно.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="contacts">
+        <h2>Контакты</h2>
+        <p class="lead">Замени номер и ссылки на свои, и можно уже публиковать.</p>
+
+        <div class="grid2">
+          <div class="item"><b>Телефон</b><span><a href="tel:+79250000000">+7 (925) 000-00-00</a></span></div>
+          <div class="item"><b>Telegram</b><span><a href="https://t.me/El_Barto220W" target="_blank" rel="noopener">@El_Barto220W</a></span></div>
+        </div>
+      </section>
+
+      <div class="footer">
+        <div>© <span id="y"></span> Руслан — частный электрик</div>
+        <div>Сайт-визитка. Можно поставить на домен и продвигать.</div>
+      </div>
+    </main>
+  </div>
+
+  <div class="sticky">
+    <div class="wrap">
+      <div class="bar">
+        <small>Нужен электрик? Позвони или напиши.</small>
+        <div class="cta">
+          <a class="btn primary" href="tel:+79250000000">Позвонить</a>
+          <a class="btn green" href="https://wa.me/79250000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" href="https://t.me/El_Barto220W" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
